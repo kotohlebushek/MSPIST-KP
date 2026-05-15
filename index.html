@@ -41,8 +41,7 @@
         <li class="nav-item"><button class="nav-link" data-target="permissions"><i class="bi bi-shield-lock me-1"></i>Права доступа</button></li>
         <li class="nav-item"><button class="nav-link" data-target="events"><i class="bi bi-journal-text me-1"></i>Журнал</button></li>
         <li class="nav-item"><button class="nav-link" data-target="reports"><i class="bi bi-bar-chart me-1"></i>Отчёты</button></li>
-        <li class="nav-item"><button class="nav-link" data-target="insights"><i class="bi bi-stars me-1"></i>Инсайты</button></li>
-      </ul>
+              </ul>
     </div>
   </nav>
 
@@ -65,10 +64,10 @@
       <div class="table-responsive"><table class="table table-vcenter card-table table-striped">
         <thead><tr><th>ID</th><th>ФИО</th><th>Должность</th><th>Статус</th><th>Роль</th><th>Пропуск</th><th>Срок действия</th><th>Авторизация</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>Анна Воронина</td><td>Руководитель ИБ</td><td><span class="badge bg-success">Активен</span></td><td>Администратор</td><td>AC-1001</td><td>2027-12-31</td><td><span class="badge bg-success">Успешно</span></td></tr>
-          <tr><td>2</td><td>Игорь Марков</td><td>DevOps инженер</td><td><span class="badge bg-success">Активен</span></td><td>Инженер</td><td>AC-1002</td><td>2026-11-10</td><td><span class="badge bg-success">Успешно</span></td></tr>
-          <tr><td>3</td><td>Мария Сафронова</td><td>HR менеджер</td><td><span class="badge bg-secondary">Временно отключён</span></td><td>HR</td><td>AC-1044</td><td>2026-06-30</td><td><span class="badge bg-warning text-dark">Пауза</span></td></tr>
-          <tr><td>4</td><td>Павел Громов</td><td>Оператор цеха</td><td><span class="badge bg-success">Активен</span></td><td>Сотрудник</td><td>AC-1108</td><td>2028-01-15</td><td><span class="badge bg-success">Успешно</span></td></tr>
+          <tr><td>1</td><td>Анна Воронина</td><td>Руководитель ИБ</td><td><span class="badge bg-success text-white">Активен</span></td><td>Администратор</td><td>AC-1001</td><td>2027-12-31</td><td><span class="badge bg-success text-white">Успешно</span></td></tr>
+          <tr><td>2</td><td>Игорь Марков</td><td>DevOps инженер</td><td><span class="badge bg-success text-white">Активен</span></td><td>Инженер</td><td>AC-1002</td><td>2026-11-10</td><td><span class="badge bg-success text-white">Успешно</span></td></tr>
+          <tr><td>3</td><td>Мария Сафронова</td><td>HR менеджер</td><td><span class="badge bg-secondary text-white">Временно отключён</span></td><td>HR</td><td>AC-1044</td><td>2026-06-30</td><td><span class="badge bg-warning text-white">Пауза</span></td></tr>
+          <tr><td>4</td><td>Павел Громов</td><td>Оператор цеха</td><td><span class="badge bg-success text-white">Активен</span></td><td>Сотрудник</td><td>AC-1108</td><td>2028-01-15</td><td><span class="badge bg-success text-white">Успешно</span></td></tr>
         </tbody>
       </table></div></div>
     </section>
@@ -84,9 +83,9 @@
         </div></div></div>
         <div class="col-lg-8"><div class="card"><div class="card-header"><h3 class="card-title">Точки доступа</h3></div><div class="table-responsive">
           <table class="table table-striped mb-0"><thead><tr><th>ID права</th><th>Точка</th><th>Локация</th><th>Статус</th><th>Действие</th></tr></thead><tbody>
-            <tr><td>501</td><td>AP-01</td><td>Главный вход</td><td><span class="badge bg-success">В сети</span></td><td><button class="btn btn-sm btn-outline-primary">Открыть дверь</button></td></tr>
-            <tr><td>501</td><td>AP-08</td><td>Офисный блок</td><td><span class="badge bg-success">В сети</span></td><td><button class="btn btn-sm btn-outline-primary">Открыть дверь</button></td></tr>
-            <tr><td>501</td><td>AP-16</td><td>Серверная</td><td><span class="badge bg-danger">Отключена</span></td><td><button class="btn btn-sm btn-outline-secondary">Проверить карту</button></td></tr>
+            <tr><td>501</td><td>AP-01</td><td>Главный вход</td><td><span class="badge bg-success text-white">В сети</span></td><td><button class="btn btn-sm btn-outline-primary">Открыть дверь</button></td></tr>
+            <tr><td>501</td><td>AP-08</td><td>Офисный блок</td><td><span class="badge bg-success text-white">В сети</span></td><td><button class="btn btn-sm btn-outline-primary">Открыть дверь</button></td></tr>
+            <tr><td>501</td><td>AP-16</td><td>Серверная</td><td><span class="badge bg-danger text-white">Отключена</span></td><td><button class="btn btn-sm btn-outline-secondary">Проверить карту</button></td></tr>
           </tbody></table>
         </div></div></div>
       </div>
@@ -96,9 +95,9 @@
       <div class="card"><div class="card-header"><h3 class="card-title">Журнал проходов</h3></div><div class="card-body">
         <div class="row g-2 mb-3"><div class="col-md-4"><input class="form-control" placeholder="Поиск: сотрудник / карта / точка"></div><div class="col-md-3"><select class="form-select"><option>Все результаты</option><option>Разрешено</option><option>Запрещено</option><option>Тревога</option></select></div><div class="col-md-3"><input type="date" class="form-control" value="2026-05-15"></div><div class="col-md-2 d-grid"><button class="btn btn-outline-primary">Экспорт CSV</button></div></div>
         <div class="table-responsive"><table class="table table-sm table-striped"><thead><tr><th>ID</th><th>Дата и время</th><th>Сотрудник</th><th>Точка</th><th>Результат</th><th>Запись</th></tr></thead><tbody>
-          <tr><td>9001</td><td>2026-05-15 15:24:01</td><td>Анна Воронина</td><td>AP-01</td><td><span class="badge bg-success">Разрешено</span></td><td>Сохранено</td></tr>
-          <tr><td>9002</td><td>2026-05-15 15:20:47</td><td>ID#A993</td><td>AP-16</td><td><span class="badge bg-danger">Запрещено</span></td><td>Сохранено</td></tr>
-          <tr><td>9003</td><td>2026-05-15 14:56:38</td><td>Система</td><td>AP-22</td><td><span class="badge bg-warning text-dark">Тревога</span></td><td>Сохранено</td></tr>
+          <tr><td>9001</td><td>2026-05-15 15:24:01</td><td>Анна Воронина</td><td>AP-01</td><td><span class="badge bg-success text-white">Разрешено</span></td><td>Сохранено</td></tr>
+          <tr><td>9002</td><td>2026-05-15 15:20:47</td><td>ID#A993</td><td>AP-16</td><td><span class="badge bg-danger text-white">Запрещено</span></td><td>Сохранено</td></tr>
+          <tr><td>9003</td><td>2026-05-15 14:56:38</td><td>Система</td><td>AP-22</td><td><span class="badge bg-warning text-white">Тревога</span></td><td>Сохранено</td></tr>
         </tbody></table></div>
       </div></div>
     </section>
@@ -112,12 +111,7 @@
       <div class="col-xl-8"><div class="card"><div class="card-header"><h3 class="card-title">Сводка по проходам</h3></div><div class="card-body chart-wrap"><canvas id="attendanceChart"></canvas></div></div></div></div>
     </section>
 
-    <section class="content-section" id="insights">
-      <div class="row g-3">
-        <div class="col-xl-8"><div class="card"><div class="card-header d-flex justify-content-between align-items-center"><h3 class="card-title mb-0">Тепловая загрузка точек</h3><span class="badge bg-azure-lt">Новая фишка</span></div><div class="card-body"><div class="row g-2"><div class="col-4"><div class="p-3 rounded bg-green-lt text-center">Главный вход<br><strong>Высокая</strong></div></div><div class="col-4"><div class="p-3 rounded bg-yellow-lt text-center">Склад<br><strong>Средняя</strong></div></div><div class="col-4"><div class="p-3 rounded bg-red-lt text-center">Серверная<br><strong>Пиковая</strong></div></div></div><hr><label class="form-label">Быстрые сценарии реагирования</label><div class="d-flex flex-wrap gap-2"><button class="btn btn-outline-danger">Блокировать пропуск</button><button class="btn btn-outline-warning">Уведомить охрану</button><button class="btn btn-outline-primary">Запросить подтверждение</button></div></div></div></div>
-        <div class="col-xl-4"><div class="card"><div class="card-header"><h3 class="card-title">Смарт-уведомления</h3></div><div class="card-body"><div class="list-group list-group-flush"><div class="list-group-item px-0"><span class="badge bg-danger me-2">Критично</span>3 отказа подряд у ID#A993</div><div class="list-group-item px-0"><span class="badge bg-warning text-dark me-2">Внимание</span>Просроченный пропуск у 1 сотрудника</div><div class="list-group-item px-0"><span class="badge bg-success me-2">OK</span>Все точки в сети</div></div></div></div></div>
-      </div>
-    </section>
+    
   </main>
 </div>
 
@@ -135,19 +129,7 @@
     });
   });
 
-  const notifyBtn = document.createElement('button');
-  notifyBtn.className='btn btn-primary position-fixed';
-  notifyBtn.style.cssText='right:20px;bottom:20px;z-index:1080;border-radius:999px;box-shadow:0 10px 20px rgba(32,107,196,.3)';
-  notifyBtn.innerHTML='<i class="bi bi-bell"></i> Демо-уведомление';
-  notifyBtn.onclick=()=>{
-    const toast=document.createElement('div');
-    toast.className='alert alert-primary position-fixed';
-    toast.style.cssText='right:20px;bottom:80px;z-index:1090;min-width:280px;animation:sectionIn .35s ease';
-    toast.innerHTML='🔔 Подозрительная активность: 2 отказа на серверной за 5 минут';
-    document.body.appendChild(toast);
-    setTimeout(()=>toast.remove(),2800);
-  };
-  document.body.appendChild(notifyBtn);
+  
 
   new Chart(document.getElementById('trafficChart'), { type: 'line', data: { labels: ['00:00','03:00','06:00','09:00','12:00','15:00','18:00','21:00'], datasets: [{ label: 'События', data: [22,15,18,63,95,102,77,41], tension: .35, borderColor: '#206bc4', fill: true, backgroundColor: 'rgba(32,107,196,.15)' }] }, options: { plugins:{legend:{labels:{usePointStyle:true}} }, animation: { duration: 900, easing: 'easeOutQuart' } } });
   new Chart(document.getElementById('alertsChart'), { type: 'doughnut', data: { labels: ['Разрешено','Запрещено','Тревога'], datasets: [{ data:[84,12,4], backgroundColor:['#2fb344','#d63939','#f59f00'] }] }, options: { cutout: '62%', animation: { animateScale: true, duration: 900 } } });
