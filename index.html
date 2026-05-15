@@ -9,33 +9,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     :root { --accent:#206bc4; --accent2:#2fb344; }
-    body {
-      background: radial-gradient(1200px 600px at 90% -20%, #dce9ff 0, transparent 60%), #f4f6fb;
-      min-height: 100vh;
-    }
+    body { background: radial-gradient(1200px 600px at 90% -20%, #dce9ff 0, transparent 60%), #f4f6fb; min-height: 100vh; }
     .app-shell { max-width: 1480px; margin: 0 auto; }
-    .glass {
-      background: rgba(255,255,255,.75);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,.6);
-    }
-    .navbar-brand-logo {
-      width: 30px; height: 30px; border-radius: 9px;
-      background: linear-gradient(140deg, var(--accent), #7eaee3);
-      box-shadow: 0 8px 20px rgba(32,107,196,.35);
-      animation: pulseLogo 2.5s infinite ease-in-out;
-    }
+    .glass { background: rgba(255,255,255,.75); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.6); }
+    .navbar-brand-logo { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(140deg, var(--accent), #7eaee3); box-shadow: 0 8px 20px rgba(32,107,196,.35); animation: pulseLogo 2.5s infinite ease-in-out; }
     @keyframes pulseLogo { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
     .content-section { display:none; opacity:0; transform: translateY(14px) scale(.99); }
     .content-section.active { display:block; animation: sectionIn .45s cubic-bezier(.2,.65,.25,1) forwards; }
     @keyframes sectionIn { to { opacity:1; transform: translateY(0) scale(1);} }
     .stat-card { transition: transform .25s ease, box-shadow .25s ease; overflow:hidden; }
     .stat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13,39,80,.12); }
-    .card-shine::after {
-      content:""; position:absolute; top:0; left:-130%; width:70%; height:100%;
-      background: linear-gradient(105deg, transparent, rgba(255,255,255,.45), transparent);
-      transform: skewX(-24deg); transition: left .7s ease;
-    }
+    .card-shine::after { content:""; position:absolute; top:0; left:-130%; width:70%; height:100%; background: linear-gradient(105deg, transparent, rgba(255,255,255,.45), transparent); transform: skewX(-24deg); transition: left .7s ease; }
     .card-shine:hover::after { left: 170%; }
     .card { border:0; box-shadow: 0 8px 24px rgba(18,38,63,.06); }
     .table thead th { white-space: nowrap; }
@@ -57,6 +41,7 @@
         <li class="nav-item"><button class="nav-link" data-target="permissions"><i class="bi bi-shield-lock me-1"></i>Права доступа</button></li>
         <li class="nav-item"><button class="nav-link" data-target="events"><i class="bi bi-journal-text me-1"></i>Журнал</button></li>
         <li class="nav-item"><button class="nav-link" data-target="reports"><i class="bi bi-bar-chart me-1"></i>Отчёты</button></li>
+        <li class="nav-item"><button class="nav-link" data-target="insights"><i class="bi bi-stars me-1"></i>Инсайты</button></li>
       </ul>
     </div>
   </nav>
@@ -64,67 +49,74 @@
   <main class="container-fluid">
     <section class="content-section active" id="dashboard">
       <div class="row g-3 mb-3">
-        <div class="col-12 col-md-3"><div class="card stat-card card-shine position-relative"><div class="card-body"><div class="text-muted">Активные User</div><div class="display-6 fw-bold">127</div><div class="progress progress-thin mt-2"><div class="progress-bar bg-primary" style="width:74%"></div></div></div></div></div>
-        <div class="col-12 col-md-3"><div class="card stat-card card-shine position-relative"><div class="card-body"><div class="text-muted">Активные AccessCard</div><div class="display-6 fw-bold">198</div><div class="progress progress-thin mt-2"><div class="progress-bar bg-success" style="width:81%"></div></div></div></div></div>
-        <div class="col-12 col-md-3"><div class="card stat-card card-shine position-relative"><div class="card-body"><div class="text-muted">Онлайн AccessPoint</div><div class="display-6 fw-bold">24/27</div><div class="progress progress-thin mt-2"><div class="progress-bar bg-info" style="width:89%"></div></div></div></div></div>
-        <div class="col-12 col-md-3"><div class="card stat-card card-shine position-relative"><div class="card-body"><div class="text-muted">AccessEvent (тревоги/сутки)</div><div class="display-6 fw-bold text-danger">3</div><div class="progress progress-thin mt-2"><div class="progress-bar bg-danger" style="width:33%"></div></div></div></div></div>
+        <div class="col-12 col-md-3"><div class="card stat-card card-shine position-relative"><div class="card-body"><div class="text-muted">Сотрудников онлайн</div><div class="display-6 fw-bold">127</div><div class="progress progress-thin mt-2"><div class="progress-bar bg-primary" style="width:74%"></div></div></div></div></div>
+        <div class="col-12 col-md-3"><div class="card stat-card card-shine position-relative"><div class="card-body"><div class="text-muted">Активных пропусков</div><div class="display-6 fw-bold">198</div><div class="progress progress-thin mt-2"><div class="progress-bar bg-success" style="width:81%"></div></div></div></div></div>
+        <div class="col-12 col-md-3"><div class="card stat-card card-shine position-relative"><div class="card-body"><div class="text-muted">Точек в сети</div><div class="display-6 fw-bold">24/27</div><div class="progress progress-thin mt-2"><div class="progress-bar bg-info" style="width:89%"></div></div></div></div></div>
+        <div class="col-12 col-md-3"><div class="card stat-card card-shine position-relative"><div class="card-body"><div class="text-muted">Тревог за сутки</div><div class="display-6 fw-bold text-danger">3</div><div class="progress progress-thin mt-2"><div class="progress-bar bg-danger" style="width:33%"></div></div></div></div></div>
       </div>
       <div class="row g-3">
-        <div class="col-12 col-xl-8"><div class="card"><div class="card-header"><h3 class="card-title">Поток AccessEvent (24 часа)</h3></div><div class="card-body chart-wrap"><canvas id="trafficChart"></canvas></div></div></div>
+        <div class="col-12 col-xl-8"><div class="card"><div class="card-header"><h3 class="card-title">Интенсивность проходов (24 часа)</h3></div><div class="card-body chart-wrap"><canvas id="trafficChart"></canvas></div></div></div>
         <div class="col-12 col-xl-4"><div class="card h-100"><div class="card-header"><h3 class="card-title">Результат событий</h3></div><div class="card-body chart-wrap"><canvas id="alertsChart"></canvas></div></div></div>
       </div>
     </section>
 
     <section class="content-section" id="users">
-      <div class="card fade-in-up"><div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2"><h3 class="card-title mb-0">User + Role + AccessCard</h3><div class="btn-list"><button class="btn btn-primary">Добавить User</button><button class="btn btn-warning">Редактировать</button><button class="btn btn-danger">Удалить</button></div></div>
+      <div class="card fade-in-up"><div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2"><h3 class="card-title mb-0">Сотрудники, роли и пропуска</h3><div class="btn-list"><button class="btn btn-primary">Добавить сотрудника</button><button class="btn btn-warning">Редактировать</button><button class="btn btn-danger">Удалить</button></div></div>
       <div class="table-responsive"><table class="table table-vcenter card-table table-striped">
-        <thead><tr><th>User ID</th><th>name</th><th>position</th><th>status</th><th>Role</th><th>AccessCard</th><th>expirationDate</th><th>authenticate()</th></tr></thead>
+        <thead><tr><th>ID</th><th>ФИО</th><th>Должность</th><th>Статус</th><th>Роль</th><th>Пропуск</th><th>Срок действия</th><th>Авторизация</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>Анна Воронина</td><td>Руководитель ИБ</td><td><span class="badge bg-success">true</span></td><td>Администратор</td><td>AC-1001</td><td>2027-12-31</td><td><span class="badge bg-success">OK</span></td></tr>
-          <tr><td>2</td><td>Игорь Марков</td><td>DevOps инженер</td><td><span class="badge bg-success">true</span></td><td>Инженер</td><td>AC-1002</td><td>2026-11-10</td><td><span class="badge bg-success">OK</span></td></tr>
-          <tr><td>3</td><td>Мария Сафронова</td><td>HR менеджер</td><td><span class="badge bg-secondary">false</span></td><td>HR</td><td>AC-1044</td><td>2026-06-30</td><td><span class="badge bg-warning text-dark">HOLD</span></td></tr>
-          <tr><td>4</td><td>Павел Громов</td><td>Оператор цеха</td><td><span class="badge bg-success">true</span></td><td>Сотрудник</td><td>AC-1108</td><td>2028-01-15</td><td><span class="badge bg-success">OK</span></td></tr>
+          <tr><td>1</td><td>Анна Воронина</td><td>Руководитель ИБ</td><td><span class="badge bg-success">Активен</span></td><td>Администратор</td><td>AC-1001</td><td>2027-12-31</td><td><span class="badge bg-success">Успешно</span></td></tr>
+          <tr><td>2</td><td>Игорь Марков</td><td>DevOps инженер</td><td><span class="badge bg-success">Активен</span></td><td>Инженер</td><td>AC-1002</td><td>2026-11-10</td><td><span class="badge bg-success">Успешно</span></td></tr>
+          <tr><td>3</td><td>Мария Сафронова</td><td>HR менеджер</td><td><span class="badge bg-secondary">Временно отключён</span></td><td>HR</td><td>AC-1044</td><td>2026-06-30</td><td><span class="badge bg-warning text-dark">Пауза</span></td></tr>
+          <tr><td>4</td><td>Павел Громов</td><td>Оператор цеха</td><td><span class="badge bg-success">Активен</span></td><td>Сотрудник</td><td>AC-1108</td><td>2028-01-15</td><td><span class="badge bg-success">Успешно</span></td></tr>
         </tbody>
       </table></div></div>
     </section>
 
     <section class="content-section" id="permissions">
       <div class="row g-3">
-        <div class="col-lg-4"><div class="card"><div class="card-header"><h3 class="card-title">AccessPermission</h3></div><div class="card-body">
-          <label class="form-label">User</label><select class="form-select mb-2"><option>Игорь Марков (id=2)</option><option>Анна Воронина (id=1)</option></select>
-          <label class="form-label">Role</label><select class="form-select mb-2"><option>Инженер</option><option>Администратор</option><option>Сотрудник</option></select>
-          <label class="form-label">accessLevel</label><select class="form-select mb-2"><option>L2-Internal</option><option>L3-Secure</option><option>L1-General</option></select>
-          <div class="row g-2"><div class="col"><label class="form-label">validFrom</label><input type="date" class="form-control" value="2026-05-01"></div><div class="col"><label class="form-label">validTo</label><input type="date" class="form-control" value="2026-12-31"></div></div>
-          <button class="btn btn-primary w-100 mt-3">grantAccess()</button>
+        <div class="col-lg-4"><div class="card"><div class="card-header"><h3 class="card-title">Назначение прав прохода</h3></div><div class="card-body">
+          <label class="form-label">Сотрудник</label><select class="form-select mb-2"><option>Игорь Марков (id=2)</option><option>Анна Воронина (id=1)</option></select>
+          <label class="form-label">Роль</label><select class="form-select mb-2"><option>Инженер</option><option>Администратор</option><option>Сотрудник</option></select>
+          <label class="form-label">Уровень доступа</label><select class="form-select mb-2"><option>L2-Внутренний</option><option>L3-Защищённый</option><option>L1-Базовый</option></select>
+          <div class="row g-2"><div class="col"><label class="form-label">Действует с</label><input type="date" class="form-control" value="2026-05-01"></div><div class="col"><label class="form-label">Действует по</label><input type="date" class="form-control" value="2026-12-31"></div></div>
+          <button class="btn btn-primary w-100 mt-3">Назначить доступ</button>
         </div></div></div>
-        <div class="col-lg-8"><div class="card"><div class="card-header"><h3 class="card-title">Доступ к AccessPoint</h3></div><div class="table-responsive">
-          <table class="table table-striped mb-0"><thead><tr><th>AccessPermission ID</th><th>AccessPoint</th><th>location</th><th>status</th><th>Действие</th></tr></thead><tbody>
-            <tr><td>501</td><td>AP-01</td><td>Главный вход</td><td><span class="badge bg-success">true</span></td><td><button class="btn btn-sm btn-outline-primary">openDoor()</button></td></tr>
-            <tr><td>501</td><td>AP-08</td><td>Офисный блок</td><td><span class="badge bg-success">true</span></td><td><button class="btn btn-sm btn-outline-primary">openDoor()</button></td></tr>
-            <tr><td>501</td><td>AP-16</td><td>Серверная</td><td><span class="badge bg-danger">false</span></td><td><button class="btn btn-sm btn-outline-secondary">readCard()</button></td></tr>
+        <div class="col-lg-8"><div class="card"><div class="card-header"><h3 class="card-title">Точки доступа</h3></div><div class="table-responsive">
+          <table class="table table-striped mb-0"><thead><tr><th>ID права</th><th>Точка</th><th>Локация</th><th>Статус</th><th>Действие</th></tr></thead><tbody>
+            <tr><td>501</td><td>AP-01</td><td>Главный вход</td><td><span class="badge bg-success">В сети</span></td><td><button class="btn btn-sm btn-outline-primary">Открыть дверь</button></td></tr>
+            <tr><td>501</td><td>AP-08</td><td>Офисный блок</td><td><span class="badge bg-success">В сети</span></td><td><button class="btn btn-sm btn-outline-primary">Открыть дверь</button></td></tr>
+            <tr><td>501</td><td>AP-16</td><td>Серверная</td><td><span class="badge bg-danger">Отключена</span></td><td><button class="btn btn-sm btn-outline-secondary">Проверить карту</button></td></tr>
           </tbody></table>
         </div></div></div>
       </div>
     </section>
 
     <section class="content-section" id="events">
-      <div class="card"><div class="card-header"><h3 class="card-title">AccessEvent log</h3></div><div class="card-body">
-        <div class="row g-2 mb-3"><div class="col-md-4"><input class="form-control" placeholder="Поиск: User / AccessCard / AccessPoint"></div><div class="col-md-3"><select class="form-select"><option>Все result</option><option>GRANTED</option><option>DENIED</option><option>ALARM</option></select></div><div class="col-md-3"><input type="date" class="form-control" value="2026-05-15"></div><div class="col-md-2 d-grid"><button class="btn btn-outline-primary">exportReport() CSV</button></div></div>
-        <div class="table-responsive"><table class="table table-sm table-striped"><thead><tr><th>id</th><th>dateTime</th><th>User</th><th>AccessPoint</th><th>result</th><th>recordEvent()</th></tr></thead><tbody>
-          <tr><td>9001</td><td>2026-05-15 15:24:01</td><td>Анна Воронина</td><td>AP-01</td><td><span class="badge bg-success">GRANTED</span></td><td>done</td></tr>
-          <tr><td>9002</td><td>2026-05-15 15:20:47</td><td>ID#A993</td><td>AP-16</td><td><span class="badge bg-danger">DENIED</span></td><td>done</td></tr>
-          <tr><td>9003</td><td>2026-05-15 14:56:38</td><td>System</td><td>AP-22</td><td><span class="badge bg-warning text-dark">ALARM</span></td><td>done</td></tr>
+      <div class="card"><div class="card-header"><h3 class="card-title">Журнал проходов</h3></div><div class="card-body">
+        <div class="row g-2 mb-3"><div class="col-md-4"><input class="form-control" placeholder="Поиск: сотрудник / карта / точка"></div><div class="col-md-3"><select class="form-select"><option>Все результаты</option><option>Разрешено</option><option>Запрещено</option><option>Тревога</option></select></div><div class="col-md-3"><input type="date" class="form-control" value="2026-05-15"></div><div class="col-md-2 d-grid"><button class="btn btn-outline-primary">Экспорт CSV</button></div></div>
+        <div class="table-responsive"><table class="table table-sm table-striped"><thead><tr><th>ID</th><th>Дата и время</th><th>Сотрудник</th><th>Точка</th><th>Результат</th><th>Запись</th></tr></thead><tbody>
+          <tr><td>9001</td><td>2026-05-15 15:24:01</td><td>Анна Воронина</td><td>AP-01</td><td><span class="badge bg-success">Разрешено</span></td><td>Сохранено</td></tr>
+          <tr><td>9002</td><td>2026-05-15 15:20:47</td><td>ID#A993</td><td>AP-16</td><td><span class="badge bg-danger">Запрещено</span></td><td>Сохранено</td></tr>
+          <tr><td>9003</td><td>2026-05-15 14:56:38</td><td>Система</td><td>AP-22</td><td><span class="badge bg-warning text-dark">Тревога</span></td><td>Сохранено</td></tr>
         </tbody></table></div>
       </div></div>
     </section>
 
     <section class="content-section" id="reports">
-      <div class="row g-3"><div class="col-xl-4"><div class="card"><div class="card-header"><h3 class="card-title">Report.generateReport()</h3></div><div class="card-body">
-        <label class="form-label">type</label><select class="form-select mb-2"><option>Посещаемость</option><option>Инциденты</option><option>Нарушения SLA</option></select>
-        <label class="form-label">period</label><select class="form-select mb-2"><option>01.05.2026 — 15.05.2026</option><option>За сегодня</option><option>За неделю</option></select>
-        <button class="btn btn-primary w-100">Сформировать</button><button class="btn btn-outline-secondary w-100 mt-2">exportReport()</button>
+      <div class="row g-3"><div class="col-xl-4"><div class="card"><div class="card-header"><h3 class="card-title">Формирование отчёта</h3></div><div class="card-body">
+        <label class="form-label">Тип отчёта</label><select class="form-select mb-2"><option>Посещаемость</option><option>Инциденты</option><option>Нарушения SLA</option></select>
+        <label class="form-label">Период</label><select class="form-select mb-2"><option>01.05.2026 — 15.05.2026</option><option>За сегодня</option><option>За неделю</option></select>
+        <button class="btn btn-primary w-100">Сформировать</button><button class="btn btn-outline-secondary w-100 mt-2">Экспорт отчёта</button>
       </div></div></div>
-      <div class="col-xl-8"><div class="card"><div class="card-header"><h3 class="card-title">Отчёт по AccessEvent</h3></div><div class="card-body chart-wrap"><canvas id="attendanceChart"></canvas></div></div></div></div>
+      <div class="col-xl-8"><div class="card"><div class="card-header"><h3 class="card-title">Сводка по проходам</h3></div><div class="card-body chart-wrap"><canvas id="attendanceChart"></canvas></div></div></div></div>
+    </section>
+
+    <section class="content-section" id="insights">
+      <div class="row g-3">
+        <div class="col-xl-8"><div class="card"><div class="card-header d-flex justify-content-between align-items-center"><h3 class="card-title mb-0">Тепловая загрузка точек</h3><span class="badge bg-azure-lt">Новая фишка</span></div><div class="card-body"><div class="row g-2"><div class="col-4"><div class="p-3 rounded bg-green-lt text-center">Главный вход<br><strong>Высокая</strong></div></div><div class="col-4"><div class="p-3 rounded bg-yellow-lt text-center">Склад<br><strong>Средняя</strong></div></div><div class="col-4"><div class="p-3 rounded bg-red-lt text-center">Серверная<br><strong>Пиковая</strong></div></div></div><hr><label class="form-label">Быстрые сценарии реагирования</label><div class="d-flex flex-wrap gap-2"><button class="btn btn-outline-danger">Блокировать пропуск</button><button class="btn btn-outline-warning">Уведомить охрану</button><button class="btn btn-outline-primary">Запросить подтверждение</button></div></div></div></div>
+        <div class="col-xl-4"><div class="card"><div class="card-header"><h3 class="card-title">Смарт-уведомления</h3></div><div class="card-body"><div class="list-group list-group-flush"><div class="list-group-item px-0"><span class="badge bg-danger me-2">Критично</span>3 отказа подряд у ID#A993</div><div class="list-group-item px-0"><span class="badge bg-warning text-dark me-2">Внимание</span>Просроченный пропуск у 1 сотрудника</div><div class="list-group-item px-0"><span class="badge bg-success me-2">OK</span>Все точки в сети</div></div></div></div></div>
+      </div>
     </section>
   </main>
 </div>
@@ -143,21 +135,23 @@
     });
   });
 
-  new Chart(document.getElementById('trafficChart'), {
-    type: 'line',
-    data: { labels: ['00:00','03:00','06:00','09:00','12:00','15:00','18:00','21:00'], datasets: [{ label: 'AccessEvent', data: [22,15,18,63,95,102,77,41], tension: .35, borderColor: '#206bc4', fill: true, backgroundColor: 'rgba(32,107,196,.15)' }] },
-    options: { plugins:{legend:{labels:{usePointStyle:true}} }, animation: { duration: 900, easing: 'easeOutQuart' } }
-  });
-  new Chart(document.getElementById('alertsChart'), {
-    type: 'doughnut',
-    data: { labels: ['GRANTED','DENIED','ALARM'], datasets: [{ data:[84,12,4], backgroundColor:['#2fb344','#d63939','#f59f00'] }] },
-    options: { cutout: '62%', animation: { animateScale: true, duration: 900 } }
-  });
-  new Chart(document.getElementById('attendanceChart'), {
-    type: 'bar',
-    data: { labels: ['1 мая','3 мая','5 мая','7 мая','9 мая','11 мая','13 мая','15 мая'], datasets: [{ label:'Успешные проходы', data:[740,790,810,760,830,860,880,840], backgroundColor:'#2fb344', borderRadius: 10 }] },
-    options: { animation: { duration: 1000, easing: 'easeOutBounce' } }
-  });
+  const notifyBtn = document.createElement('button');
+  notifyBtn.className='btn btn-primary position-fixed';
+  notifyBtn.style.cssText='right:20px;bottom:20px;z-index:1080;border-radius:999px;box-shadow:0 10px 20px rgba(32,107,196,.3)';
+  notifyBtn.innerHTML='<i class="bi bi-bell"></i> Демо-уведомление';
+  notifyBtn.onclick=()=>{
+    const toast=document.createElement('div');
+    toast.className='alert alert-primary position-fixed';
+    toast.style.cssText='right:20px;bottom:80px;z-index:1090;min-width:280px;animation:sectionIn .35s ease';
+    toast.innerHTML='🔔 Подозрительная активность: 2 отказа на серверной за 5 минут';
+    document.body.appendChild(toast);
+    setTimeout(()=>toast.remove(),2800);
+  };
+  document.body.appendChild(notifyBtn);
+
+  new Chart(document.getElementById('trafficChart'), { type: 'line', data: { labels: ['00:00','03:00','06:00','09:00','12:00','15:00','18:00','21:00'], datasets: [{ label: 'События', data: [22,15,18,63,95,102,77,41], tension: .35, borderColor: '#206bc4', fill: true, backgroundColor: 'rgba(32,107,196,.15)' }] }, options: { plugins:{legend:{labels:{usePointStyle:true}} }, animation: { duration: 900, easing: 'easeOutQuart' } } });
+  new Chart(document.getElementById('alertsChart'), { type: 'doughnut', data: { labels: ['Разрешено','Запрещено','Тревога'], datasets: [{ data:[84,12,4], backgroundColor:['#2fb344','#d63939','#f59f00'] }] }, options: { cutout: '62%', animation: { animateScale: true, duration: 900 } } });
+  new Chart(document.getElementById('attendanceChart'), { type: 'bar', data: { labels: ['1 мая','3 мая','5 мая','7 мая','9 мая','11 мая','13 мая','15 мая'], datasets: [{ label:'Успешные проходы', data:[740,790,810,760,830,860,880,840], backgroundColor:'#2fb344', borderRadius: 10 }] }, options: { animation: { duration: 1000, easing: 'easeOutBounce' } } });
 </script>
 </body>
 </html>
